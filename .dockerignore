@@ -1,0 +1,11 @@
+# Ignore all log files
+*.log
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore any .md files
+*.md
+
+# Ignore any temporary files
+*~
