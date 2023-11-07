@@ -1,0 +1,27 @@
+<h1>Crud Angular Project</h1>
+
+<nav>
+	<ul>
+		<li><a routerLink="/list-employee" routerLinkActive="active" ariaCurrentWhenActive="page">List employee</a></li>
+		<li><a routerLink="/add-employee" routerLinkActive="active" ariaCurrentWhenActive="page">Add employee</a></li>
+	</ul>
+</nav>
+<input 
+	type="text"
+	[(ngModel)]="todoValue"
+	(keyup.enter)="addItem()"
+
+>
+<button (click)="addItem()" >Add item</button>
+
+<div class="list">
+	<ul>
+		<li *ngFor="let item of list">
+			<input type="checkbox" name="isDone" [(ngModel)]="item.id">  
+			{{item.value}}
+			<button (click)="deleteItem(item.id)" >Delete Item</button>
+		</li>
+	</ul>
+</div>
+
+<router-outlet></router-outlet>
