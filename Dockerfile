@@ -1,22 +1,27 @@
-FROM centos:latest
-
+# System configuration
+FROM centos:latest AS system-setup
 RUN cd /etc/yum.repos.d/ \
     && sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
     && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
-
 RUN yum -y update && yum -y install curl
 
+# Node installation
+FROM system-setup AS node-setup
 RUN curl -sL https://rpm.nodesource.com/setup_16.x | bash -
-
 RUN yum -y install nodejs httpd
 
+# Application build
+FROM node-setup AS app-build
+WORKDIR /crud-app
+COPY ./angular-crud-app/package*.json ./
+RUN npm install
+COPY ./angular-crud-app .
+RUN npm run build
+
+# Setup application
+FROM node-setup AS app-setup
 WORKDIR /var/www/html
-
-COPY ./crud-app/dist/crud-app .
-
-
-
+COPY --from=app-build /crud-app/dist/crud-app/ .
 CMD apachectl -DFOREGROUND
-
 
 
