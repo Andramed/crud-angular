@@ -1,0 +1,19 @@
+.nav-bar {
+	background: rgb(182, 239, 250);
+	padding: 1rem 1rem;
+	ul{
+		padding: 0;
+		margin: 0;
+		display: flex;
+		gap: 10rem;
+		text-decoration: none;
+	
+	}
+}
+
+.item-list {
+	list-style: none;
+	a {
+		text-decoration: none;
+	}
+}
