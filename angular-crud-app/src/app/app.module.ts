@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,14 +14,16 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   declarations: [
     AppComponent,
     routingComponents,
-    NavBarComponent,
-	
+    NavBarComponent	
 	
 ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-	FormsModule
+	FormsModule,
+	ReactiveFormsModule,
+	BrowserAnimationsModule,
+	HttpClientModule
   ],
   providers: [
 	

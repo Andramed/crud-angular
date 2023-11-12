@@ -4,7 +4,8 @@ import { Todo } from './todo';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+ 
 })
 export class AppComponent {
   title = 'crud-app';
@@ -16,7 +17,6 @@ export class AppComponent {
 		this.list = [];
 		this.todoValue = "";
 	}
-
 	addItem(){
 		if (this.todoValue !== "") {
 			const newItem: Todo = {
@@ -24,12 +24,10 @@ export class AppComponent {
 				value: this.todoValue,
 				isDone: false
 			}
-
 			this.list.push(newItem);
 		}
 		this.todoValue= "";
 	}
-
 	deleteItem(id:number) {
 		this.list = this.list.filter(item => item.id !== id);
 	}
