@@ -37,28 +37,15 @@ export class UserController {
     }
 
     async update(request: Request, response: Response, next: NextFunction) {
-        const id = parseInt(request.params.id);
-
-        const user = await this.userRepository.findOne({
-            where: { id }
-        });
+        const id = parseInt(request.params.id);   
 
         const updatePropreties = {};
 
         Object.keys(request.body).forEach( (item, index) => {
             updatePropreties[item]= Object.values(request.body)[index];
-        })
-        
-        const newUserData : User = {
-            ...user,
-            firstName:   updatePropreties.firstName || user.firstName ,
-            lastName: updatePropreties.lastName || user.lastName,
-            email: updatePropreties.email || user.email
-        }
-        
-        console.log(updatePropreties)     
+        });        
 
-        return this.userRepository.update(id, newUserData);
+        return this.userRepository.update(id, {...updatePropreties});
     }
 
     async remove(request: Request, response: Response, next: NextFunction) {
