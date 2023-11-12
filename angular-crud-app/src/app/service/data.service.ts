@@ -8,7 +8,7 @@ import { Data } from '../interface/data';
 })
 export class DataService {
 
-	apiUrl = "http://localhost:3000/test";
+	apiUrl = "http://localhost:3000/users";
 	constructor(private http: HttpClient) { }
 
 	getMessage(): Observable<Data> {

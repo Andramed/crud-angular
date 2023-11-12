@@ -7,7 +7,7 @@ export const AppDataSource = new DataSource({
     host: "localhost",
     port: 5432,
     username: "postgres",
-    password: "01133",
+    password: "Lumia530",
     database: "angular_crud_db",
     synchronize: true,
     logging: false,
