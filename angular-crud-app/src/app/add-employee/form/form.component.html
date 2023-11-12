@@ -1,0 +1,23 @@
+<form class="formAdd" [formGroup] = "employeeForm" (ngSubmit)="onSubmit()">
+	
+
+		<custom-input
+			[controlerName] = "employeeForm.controls.email"
+			[labelText] = "'Email'"
+			[placeHolder] = "'example@mail.com'"
+		></custom-input>
+		<custom-input
+			[controlerName] = "employeeForm.controls.firstName"
+			[labelText] = "'First name'"
+			[placeHolder] = "'John'"
+		></custom-input>
+		<custom-input
+			[controlerName] = "employeeForm.controls.lastName"
+			[labelText] = "'Last name'"
+			[placeHolder] = "'Doe'"
+		></custom-input>
+
+		<button class="btn" type="submit">Add Employe</button>
+	
+
+</form>

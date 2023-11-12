@@ -1,0 +1,18 @@
+.formAdd {
+	display: flex;
+	flex-direction: column;
+	
+	.btn {
+		background: rgb(177, 243, 243);
+		border: 0;
+		padding: 1rem 2rem;
+	}
+	.btn:hover {
+		background: rgb(42, 241, 241);
+		cursor: pointer;
+		border-radius: 1rem;
+		transition: background 300ms ease-in;
+		transition: border-radius 150ms ease-in;
+	}
+
+}
