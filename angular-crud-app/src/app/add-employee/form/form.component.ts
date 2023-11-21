@@ -28,17 +28,13 @@ export class FormComponent {
 		email: new FormControl('')
 	})
 	
-	constructor(private data_service: DataService) {
-
-	}
+	constructor(private data_service: DataService) {}
 
 	onSubmit() {
 		console.log('try to connect to server');
-		this.data_service.getMessage().subscribe({
-			next: (data) => {
-				this.data = data;
-				console.log(data);
-				
+		this.data_service.postNewEmployee(this.employeeForm.value).subscribe({
+			next: (res) => {
+				console.log(res);	
 			}
 		})
 	}

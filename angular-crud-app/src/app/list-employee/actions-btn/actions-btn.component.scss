@@ -1,0 +1,19 @@
+.container-btn{
+	padding: 0.5rem	;
+	display: flex;
+	gap: 1.5rem;
+	button{
+		border: none;
+		padding: 0.5rem 1rem ;
+		cursor: pointer;
+	}
+	.edit{
+		background: rgb(187, 249, 94);
+	}
+	.view {
+		background: rgb(152, 250, 250);
+	}
+	.delete {
+		background: red;
+	}
+}
